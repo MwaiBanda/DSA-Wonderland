@@ -11,9 +11,11 @@ run:
 	echo '6) C++'; \
 	echo '7) Javascript'; \
 	echo '8) Typescript'; \
+	echo '9) Python'; \
 	read -p 'Enter choice: ' result && $(MAKE) SELECTED_LANGUAGE=$$result language-selected
-	 
+
 language-selected:
+	@echo
 ifeq ($(SELECTED_LANGUAGE),1)
 	@cd ./Go && go run main.go
 endif
@@ -38,7 +40,11 @@ endif
 ifeq ($(SELECTED_LANGUAGE),8)
 	@cd ./Typescript && node main.ts
 endif
+ifeq ($(SELECTED_LANGUAGE),9)
+	@cd ./Python && python3 main.py
+endif
 	
 	
+
 
 	
